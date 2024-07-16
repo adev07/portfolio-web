@@ -26,7 +26,7 @@ const projects: Project[] = [
     desc: "A web application that facilitates seamless food ordering and delivery experiences.",
     img: "/static/projects/Currycook.png",
     link: "https://currycook.com/",
-    tags: ["React", "Tailwind CSS", "CSS", "TypeScript", "Axios", "Redux"],
+    tags: ["React", "Tailwind CSS", "CSS", "TypeScript", "Axios", "Redux Toolkit"],
   },
   
   {
