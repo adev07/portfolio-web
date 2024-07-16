@@ -25,8 +25,7 @@ export default function MobileNavbar() {
   return (
     <nav>
       <div
-        className={`w-full justify-between flex items-center ${isMenuOpen && 'bg-bg'} p-5`}
-        style={{ zIndex: 101 }}
+        className={`w-full justify-between flex items-center z-[100] ${isMenuOpen && 'bg-bg'} p-5`}
       >
         <li className="list-none font-bold text-lg">
           <Link href="/">
