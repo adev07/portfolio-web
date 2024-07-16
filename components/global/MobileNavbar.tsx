@@ -1,18 +1,10 @@
 import { useEffect, useState } from "react";
-
 import Link from "next/link";
-import {routes} from "@/data/global";
-import useDelayedRender from "use-delayed-render";
+import { CSSTransition } from "react-transition-group";
+import { routes } from "@/data/global";
 
 export default function MobileNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
-    isMenuOpen,
-    {
-      enterDelay: 20,
-      exitDelay: 300,
-    }
-  );
 
   function toggleMenu() {
     if (isMenuOpen) {
@@ -33,26 +25,26 @@ export default function MobileNavbar() {
   return (
     <nav>
       <div
-        className={`w-full justify-between flex items-center ${isMenuRendered && 'bg-bg'} p-5`}
+        className={`w-full justify-between flex items-center ${isMenuOpen && 'bg-bg'} p-5`}
         style={{ zIndex: 101 }}
       >
         <li className="list-none font-bold text-lg">
-        <Link href="/">
-          <span className="font-black text-xl flex items-center">
-            <img
-              className="mr-2 transform hover:rotate-360 hover:scale-75 transition-transform duration-500"
-              src="/static/logos/logo_no_text.svg"
-              width="30"
-            />
-            {"adev07".split("").map((letter, index) => {
-              return (
-                <span key={index} className="hover:text-fun-pink text-[18px] hover:-mt-2 transition-all duration-500 hover:duration-100 click:goodbyeLetterAnim">
-                  {letter}
-                </span>
-              );
-            })}
-          </span>
-        </Link>
+          <Link href="/">
+            <span className="font-black text-xl flex items-center">
+              <img
+                className="mr-2 transform hover:rotate-360 hover:scale-75 transition-transform duration-500"
+                src="/static/logos/logo_no_text.svg"
+                width="30"
+              />
+              {"adev07".split("").map((letter, index) => {
+                return (
+                  <span key={index} className="hover:text-fun-pink text-[18px] hover:-mt-2 transition-all duration-500 hover:duration-100 click:goodbyeLetterAnim">
+                    {letter}
+                  </span>
+                );
+              })}
+            </span>
+          </Link>
         </li>
         <button
           className="burger visible md:hidden"
@@ -64,16 +56,19 @@ export default function MobileNavbar() {
           <CrossIcon data-hide={!isMenuOpen} />
         </button>
       </div>
-      {isMenuMounted && (
-        <ul
-          className={`menu flex flex-col absolute bg-bg
-            ${isMenuRendered && "menuRendered"}`}
-        >
+      <CSSTransition
+        in={isMenuOpen}
+        timeout={300}
+        classNames="menu-transition"
+        unmountOnExit
+      >
+        <ul className="menu flex flex-col absolute bg-bg">
           {routes.map((item, index) => {
             return (
               <li
                 className="border-b border-gray-900 text-gray-100 text-sm font-semibold"
                 style={{ transitionDelay: `${150 + index * 25}ms` }}
+                key={index}
               >
                 <Link href={item.path}>
                   <a className="flex w-auto pb-4">{item.title}</a>
@@ -82,7 +77,7 @@ export default function MobileNavbar() {
             );
           })}
         </ul>
-      )}
+      </CSSTransition>
     </nav>
   );
 }
