@@ -262,11 +262,6 @@ pre {
   @apply mt-0 rounded-t-none;
 }
 
-.highlight-line {
-  @apply block px-4 -mx-4 border-l-4 border-blue-500 bg-gray-800;
-} */
-
-/* --------------------------------------------------------- */
 
 @keyframes scaleDownIn {
   from {
