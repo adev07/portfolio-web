@@ -27,6 +27,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <div id="chat-widget" data-key="670ba338ed5ebaafedaec423"></div><link href="https://cdn.jsdelivr.net/gh/CatalystsReachOut/widget-cdn@latest/main.css" rel="stylesheet" /><script src="https://cdn.jsdelivr.net/gh/CatalystsReachOut/widget-cdn@latest/main.js"></script>
         </body>
       </Html>
     );
