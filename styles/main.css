@@ -101,7 +101,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
-.menu > * + * {
+.menu>*+* {
   margin-top: 24px;
 }
 
@@ -114,6 +114,29 @@ body::-webkit-scrollbar-thumb {
   font-size: 80px;
   @apply text-fun-pink;
 }
+
+.menu-enter {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-exit-active {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 300ms, transform 300ms;
+}
+
 
 /* BLOG */
 
@@ -301,19 +324,23 @@ pre {
 .sqD {
   @apply absolute z-[-10];
 }
+
 .menu-transition-enter {
   opacity: 0;
   transform: translateY(-20px);
 }
+
 .menu-transition-enter-active {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 300ms, transform 300ms;
 }
+
 .menu-transition-exit {
   opacity: 1;
   transform: translateY(0);
 }
+
 .menu-transition-exit-active {
   opacity: 0;
   transform: translateY(-20px);

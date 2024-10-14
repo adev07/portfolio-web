@@ -1,15 +1,13 @@
 import Footer from "../global/Footer";
 import Head from "next/head";
-import MobileNavbar from "../global/MobileNavbar";
 import Navbar from "../global/Navbar";
 import React, { ReactChildren } from "react";
 
 function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
-  const pageTitle = `${
-    currentPage === "Home"
-      ? "Aditya Anand - Web Developer, Designer, Creator."
-      : `${currentPage} - adev07`
-  }`;
+  const pageTitle = `${currentPage === "Home"
+    ? "Aditya Anand - Web Developer, Designer, Creator."
+    : `${currentPage} - adev07`
+    }`;
   console.log(currentPage);
   return (
     <div
@@ -46,7 +44,7 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
         <meta property="og:description" content={desc} />
         <meta
           property="og:image"
-          // content="https://braydentw.io/static/misc/og.png"
+        // content="https://braydentw.io/static/misc/og.png"
         />
 
         <meta property="twitter:card" content="summary_large_image" />
@@ -55,7 +53,7 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
         <meta property="twitter:description" content={desc} />
         <meta
           property="twitter:image"
-          // content="https://braydentw.io/static/misc/og.png"
+        // content="https://braydentw.io/static/misc/og.png"
         ></meta>
         {/* <script
           async
@@ -95,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <Navbar currentPage={currentPage} />
         </div>
         <div className="-m-5 block sm:hidden z-100">
-          <MobileNavbar />
+          <Navbar currentPage={currentPage} />
         </div>
         {children}
       </main>
