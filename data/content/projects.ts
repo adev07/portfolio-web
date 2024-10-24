@@ -4,60 +4,107 @@ import { Project } from "types";
 const projects: Project[] = [
   {
     id: 0,
-    title: "Raw Diaries",
-    desc: "The Trips Booking App uses MongoDB for backend storage and Next.js with React for frontend development.",
-    img: "/static/projects/rd.png",
-    link: "https://rawdiaries.vercel.app/",
-    github: "https://github.com/prynsh7/rawdiaries",
-    tags: ["React","Redux", "NextJS", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+    title: "Business Evaluation",
+    desc: "A web application that allows users to compare businesses and get recommendations for the best businesses in their area.",
+    img: "/static/projects/business.webp",
+    link: "https://business-evaluation-nine.vercel.app/",
+    github: "https://github.com/adev07/business-evaluation",
+    tags: [
+      "React",
+      "Zustand",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "React-hook-form",
+    ],
   },
   {
     id: 1,
-    title: "Perfecto - Real Estate",
-    desc: "A real estate web application that allows users to search for properties and contact agents. Maps are integrated to show the location of the properties.",
-    img: "/static/projects/perfecto.png",
-    link: "https://perfecto-frontend.vercel.app/",
-    github: "https://github.com/adev07/perfecto",
-    tags: ["React","Redux", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+    title: "Raw Diaries",
+    desc: "The Trips Booking App uses MongoDB for backend storage and Next.js with React for frontend development.",
+    img: "/static/projects/rd.webp",
+    link: "https://rawdiaries.vercel.app/",
+    github: "https://github.com/prynsh7/rawdiaries",
+    tags: [
+      "React",
+      "Redux",
+      "NextJS",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+    ],
   },
   {
     id: 2,
+    title: "Perfecto - Real Estate",
+    desc: "A real estate web application that allows users to search for properties and contact agents. Maps are integrated to show the location of the properties.",
+    img: "/static/projects/perfecto.webp",
+    link: "https://perfecto-frontend.vercel.app/",
+    github: "https://github.com/adev07/perfecto",
+    tags: ["React", "Redux", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+  },
+  {
+    id: 4,
+    title: "Notes Application",
+    desc: "A full stack application that allows users to create, edit, and delete notes and also allows users to search for notes by title, content and tags.",
+    img: "/static/projects/NotesApp.webp",
+    link: "https://lms-frontend-5z2d.vercel.app/",
+    tags: [
+      "React",
+      "Tailwind CSS",
+      "React-Quill",
+      "TypeScript",
+      "Zustand",
+      "Node.js",
+    ],
+  },
+  {
+    id: 5,
     title: "Curry Cook",
     desc: "A web application that facilitates seamless food ordering and delivery experiences.",
-    img: "/static/projects/Currycook.png",
+    img: "/static/projects/Currycook.webp",
     link: "https://currycook.com/",
-    tags: ["React", "Tailwind CSS", "CSS", "TypeScript", "Axios", "Redux Toolkit"],
-  },
-  
-  {
-    id: 3,
-    title: "Currency Converter",
-    desc: "A currency connverter app made with React and Contenxt Api",
-    img: "/static/projects/currency.jpeg",
-    link: "https://currency-converter-adev07.vercel.app/",
-    github: "https://github.com/adev07/currency-converter",
-    tags: ["React","Vite", "Context Api", "Tailwind CSS" ],
+    tags: [
+      "React",
+      "Tailwind CSS",
+      "CSS",
+      "TypeScript",
+      "Axios",
+      "Redux Toolkit",
+    ],
   },
 
   {
-    id: 4,
+    id: 6,
+    title: "Currency Converter",
+    desc: "A currency connverter app made with React and Contenxt Api",
+    img: "/static/projects/currency.webp",
+    link: "https://currency-converter-adev07.vercel.app/",
+    github: "https://github.com/adev07/currency-converter",
+    tags: ["React", "Vite", "Context Api", "Tailwind CSS"],
+  },
+
+  {
+    id: 7,
     title: "To-Do App",
     desc: "A TO-DO app to keep tracking on your daily activites used firebase for authentication.",
-    img: "/static/projects/Todo.jpeg",
+    img: "/static/projects/Todo.webp",
     link: "https://firebase-todo-app-chi.vercel.app",
     tags: ["React", "Firebase", "Tailwind CSS", "Redux"],
   },
-  
+
   {
-    id: 5,
+    id: 8,
     title: "Digi Tracker",
     desc: "A project management software which enhance project tracking, task management, and collaboration.",
-    img: "/static/projects/digitrack.png",
+    img: "/static/projects/digitrack.webp",
     github: "https://github.com/admin-digibranders-com/digitracker-front",
     tags: ["React", "CSS", "TailwindCSS", "TypeScript"],
   },
   {
-    id: 6,
+    id: 9,
     title: "IT Repeats",
     desc: "A web application that enables college students to upload and access test questions from earlier years.",
     img: "/static/projects/itrepeats.png",
@@ -101,14 +148,12 @@ const projects: Project[] = [
   // },
 ];
 
-export const allTags = []
+export const allTags = [];
 
 projects.forEach((project) => {
-  project.tags.forEach((tag) => !allTags.includes(tag) && allTags.push(tag))
+  project.tags.forEach((tag) => !allTags.includes(tag) && allTags.push(tag));
 });
 
-export const allKebabTags = allTags.map(tag => (
-  kebabCase(tag)
-))
+export const allKebabTags = allTags.map((tag) => kebabCase(tag));
 
-export default projects
+export default projects;
