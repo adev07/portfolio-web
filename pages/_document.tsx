@@ -26,7 +26,7 @@ class MyDocument extends Document {
         </Head>
         <body>
           <Main />
-          <div id="chat-widget" data-key="670ba338ed5ebaafedaec423"></div><link href="https://cdn.jsdelivr.net/gh/helio-ai/widget@latest/main.css" rel="stylesheet" /><script src="https://cdn.jsdelivr.net/gh/helio-ai/widget@latest/main.js"></script>
+          <div id="chat-widget" data-key="6744c6df0c46a3c1ab2168e2"></div><script src="https://cdn.jsdelivr.net/gh/helio-ai/widget@latest/main.js"></script>
           <NextScript />
         </body>
       </Html>
